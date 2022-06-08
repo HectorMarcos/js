@@ -1,5 +1,3 @@
-let name = "Hector";
-var surname = "Marcos";
-const DATE = "31/08/88";
+let print = (noname, surname) => console.log("Hello " + noname + " " + surname);
 
-console.log(name + " " + surname + " " + DATE);
+print("Hector", "Marcos");

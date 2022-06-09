@@ -44,17 +44,9 @@ let removeAt = (event) => {
 
 let arrayRefesh = (array) => {
 	let arrayDiv = document.getElementById("arrDiv");
-	let arrayUpdate = arrayDiv;
-
+	arrayDiv.innerHTML = "";
 	for (let i = 0; i < arr.length; i++) {
-		if (i == 0) {
-			//trash, no funciona
-			arrayDiv.remove();
-			i++;
-			console.log(i);
-		} else {
-			let element = arr[i];
-			arrayUpdate.innerHTML += `<p>${element}</p>`;
-		}
+		let element = arr[i];
+		arrayDiv.innerHTML += `<p>[${element}]</p>`;
 	}
 };

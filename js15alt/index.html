@@ -1,45 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./styles.css" />
+		<title>Document</title>
+	</head>
 	<body>
-		<div id="questionnaire">
-			<span id="score">0</span>
-		</div>
+		<div class="container">
+			<div id="questionnaire">
+				<span id="score">0</span>
+			</div>
 
-		<script>
-			let score = 0;
-			let questions = [
-				{
-					question: "Cuál de los siguientes NO es un editor de código?",
-					a: "VSCode",
-					b: "vim",
-					c: "Excel",
-					solution: "c",
-				},
-				{
-					question: "Cuál de los siguientes SÍ es un editor de código?",
-					a: "VSCode",
-					b: "Access",
-					c: "Excel",
-					solution: "a",
-				},
-			];
-			let questionnaireDiv = document.getElementById("questionnaire");
-			let solveQuestion = (event) => {
-				let question = event.currentTarget.getAttribute("id");
-				let answer = event.target.getAttribute("id");
-				if (questions[question].solution === answer) {
-					event.target.style.backgroundColor = "green";
-					document.getElementById("score").innerHTML = score += 1;
-				} else event.target.style.backgroundColor = "red";
-			};
-			questions.forEach((question, index) => {
-				questionnaireDiv.innerHTML += `<div id='${index}' onClick=solveQuestion(event)> 
-                ${question.question}<br>
+			<script>
+				let score = 0;
+				let questions = [
+					{
+						question: "Cuál de los siguientes NO es un editor de código?",
+						a: "VSCode",
+						b: "vim",
+						c: "Excel",
+						solution: "c",
+					},
+					{
+						question: "Cuál de los siguientes SÍ es un editor de código?",
+						a: "VSCode",
+						b: "Access",
+						c: "Excel",
+						solution: "a",
+					},
+				];
+				let questionnaireDiv = document.getElementById("questionnaire");
+				let solveQuestion = (event) => {
+					let question = event.currentTarget.getAttribute("id");
+					let answer = event.target.getAttribute("id");
+					if (questions[question].solution === answer) {
+						event.target.style.backgroundColor = "green";
+						document.getElementById("score").innerHTML = score += 1;
+					} else event.target.style.backgroundColor = "red";
+				};
+				questions.forEach((question, index) => {
+					questionnaireDiv.innerHTML += `<div class="box" id='${index}' onClick=solveQuestion(event)> 
+                <p>${question.question}</p><br>
                 <span id='a'>${question.a}</span><br>
                 <span id='b'>${question.b}</span><br>
                 <span id='c'>${question.c}</span>
                 </div><br>`;
-			});
-		</script>
+				});
+			</script>
+		</div>
 	</body>
 </html>

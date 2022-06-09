@@ -10,15 +10,12 @@
 	<body>
 		<div class="container">
 			<h1>Quiz</h1>
-			<div class="box">
-				<h2>
-					Cuales son las siguines opciones que no es un editor de
-					codigo
-				</h2>
-				<div onclick="try()" id="vim">vim</div>
-				<div onclick="try()" id="vscode">vscode</div>
-				<div onclick="try()" id="emacs">emacs</div>
-				<div onclick="try()" id="word">word</div>
+			<div id="questionnaire">
+				<h2>Cuales son las siguines opciones que no es un editor de codigo</h2>
+				<div id="a" onclick="solveQuestion(event)" class="">vim</div>
+				<div id="b" onclick="solveQuestion(event)" class="">vscode</div>
+				<div id="c" onclick="solveQuestion(event)" class="">emacs</div>
+				<div id="d" onclick="solveQuestion(event)" class="">word</div>
 			</div>
 			<p>Question 1 of 3</p>
 		</div>

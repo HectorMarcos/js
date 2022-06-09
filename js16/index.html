@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./styles.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script src="./main.js"></script>
+		<div class="container"><p>Add Item</p>
+			<div class="addItem">
+				<button id="push" onclick="push(event)">push</button>
+				<button id="unshift" onclick="unshift(event)">unshift</button>
+				<button id="insertAt" onclick="insertAt(event)">insert at</button>
+				<select name="" id="addAtN">
+					<script>
+						let addCount = document.getElementById("addAtN");
+							for (let i = 0; i < arr.length + 1; i++) {
+								addAtN.innerHTML += 
+								`<option value="${i}">${i}
+									</option>`;
+							}
+					</script>
+				</select>
+			</div><p>Remove Item</p>
+			<div id="removeItem">
+				<button id="pop" onclick="pop(event)">pop</button>
+				<button id="shift" onclick="shift(event)">shift</button>
+				<button id="removeAt" onclick="removeAt(event)">remove at</button>
+				<select name="" id="removeAtN">
+					<script>
+						let removeCount = document.getElementById("removeAtN");
+							for (let i = 0; i < arr.length + 1; i++) {
+								removeAtN.innerHTML += 
+								`<option value="${i}">${i}
+									</option>`;
+							}
+					</script>
+				</select>
+			</div>
+			<div id="arrDiv">
+				<script>
+				let arrayDiv = document.getElementById("arrDiv");
+					for (let i = 0; i < arr.length; i++) {
+						let element = arr[i];
+						arrDiv.innerHTML += `<p>[${element}]</p>`;
+					}
+				</script>
+			</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.success {
+				background-color: red;
+			}
+
+			.fail {
+				background-color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id="titulo">asfdasdf</h1>
+		<script>
+			document.addEventListener("click", function handleClick(event) {
+				//console.log(event.srcElement.id);
+				const element = document.getElementById(event.srcElement.id);
+				//console.log(event);
+				element.classList.add("success");
+			});
+		</script>
+	</body>
+</html>

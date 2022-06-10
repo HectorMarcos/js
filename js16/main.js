@@ -3,13 +3,13 @@ let arr = ["⭐", "😊", "🤣", "⭐", "❤", "👌", "😎"];
 let push = (event) => {
 	arr.push("💋");
 	console.log(arr);
-	arrayRefesh(arr);
+	arrayRefresh(arr);
 };
 
 let unshift = (event) => {
 	arr.unshift("💋");
 	console.log(arr);
-	arrayRefesh(arr);
+	arrayRefresh(arr);
 };
 
 let insertAt = (event) => {
@@ -20,19 +20,22 @@ let insertAt = (event) => {
 	}
 	console.log(arr);
 	console.log(positionValue);
-	arrayRefesh(arr);
+	arrayRefresh(arr);
+	//selectAddRefresh(arr);
+	//selectRemoveRefresh(arr);
+	selectRefresh(arr);
 };
 
 let pop = (event) => {
 	arr.pop();
 	console.log(arr);
-	arrayRefesh(arr);
+	arrayRefresh(arr);
 };
 
 let shift = (event) => {
 	arr.shift();
 	console.log(arr);
-	arrayRefesh(arr);
+	arrayRefresh(arr);
 };
 
 let removeAt = (event) => {
@@ -42,16 +45,52 @@ let removeAt = (event) => {
 		arr.splice(positionValue - 1, 1);
 	}
 	console.log(arr);
-	arrayRefesh(arr);
+	arrayRefresh(arr);
+	//selectAddRefresh(arr);
+	//selectRemoveRefresh(arr);
+	selectRefresh(arr);
 };
 
-// FIXME cada iteraion borra el arrayDiv, de modo que crashea y deja de pintar :S
-
-let arrayRefesh = (array) => {
+let arrayRefresh = (array) => {
 	let arrayDiv = document.getElementById("arrDiv");
 	arrayDiv.innerHTML = "";
 	for (let i = 0; i < arr.length; i++) {
 		let element = arr[i];
-		arrayDiv.innerHTML += `<p>[${element}]</p>`;
+		arrayDiv.innerHTML += `<p>${element}</p>`;
+	}
+};
+
+////
+
+let selectRemoveRefresh = (array) => {
+	let count = document.getElementById("removeAtN");
+	count.innerHTML = "";
+	for (let i = 0; i < arr.length + 1; i++) {
+		removeAtN.innerHTML += `<option value="${i}">${i}
+			</option>`;
+	}
+};
+
+let selectAddRefresh = (array) => {
+	let count = document.getElementById("addAtN");
+	count.innerHTML = "";
+	for (let i = 0; i < arr.length + 1; i++) {
+		addAtN.innerHTML += `<option value="${i}">${i}
+			</option>`;
+	}
+};
+
+let selectRefresh = (array) => {
+	let count = document.getElementById("removeAtN");
+	count.innerHTML = "";
+	for (let i = 0; i < arr.length + 1; i++) {
+		removeAtN.innerHTML += `<option value="${i}">${i}
+			</option>`;
+	}
+	let count2 = document.getElementById("addAtN");
+	count2.innerHTML = "";
+	for (let i = 0; i < arr.length + 1; i++) {
+		addAtN.innerHTML += `<option value="${i}">${i}
+			</option>`;
 	}
 };
